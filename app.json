@@ -1,22 +1,28 @@
 {
   "expo": {
-    "name": "modern-chat-app",
-    "slug": "modern-chat-app",
+    "name": "chatter-app",
+    "slug": "chatter-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "modernchatapp",
-    "userInterfaceStyle": "automatic",
+    "scheme": "chatterapp",
+    "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ahsant4riq.chatterapp",
+      "associatedDomains": [
+        "applinks:vocal-bluejay-96.clerk.accounts.dev",
+        "webcredentials:vocal-bluejay-96.clerk.accounts.dev"
+      ]
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.ahsant4riq.chatterapp"
     },
     "web": {
       "bundler": "metro",
@@ -32,6 +38,16 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-secure-store",
+      "expo-web-browser",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "16.0"
+          }
         }
       ]
     ],

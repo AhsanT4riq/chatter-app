@@ -1,50 +1,83 @@
-# Welcome to your Expo app 👋
+# 📱 Chatter App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cross-platform chat application built with [Expo](https://expo.dev), using **Clerk** for authentication and **Supabase** for real-time messaging and database management.
 
-## Get started
+Authentication is handled by [Clerk](https://clerk.com).
 
-1. Install dependencies
+- Sign in with Passkeys (Clerk Passkeys)
+- Sign in with Google (Clerk SSO)
 
-   ```bash
-   npm install
-   ```
+User can create Passkeys in the profile screen.
 
-2. Start the app
+## 🚀 Getting Started
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 1. Install dependencies
 
 ```bash
-npm run reset-project
+bun install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Start the development server
 
-## Learn more
+```bash
+bunx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Then, choose to run on:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- 📱 iOS Simulator
+- 🤖 Android Emulator
+- 📦 [Expo Go](https://expo.dev/go) (limited support for native modules)
+- 🔧 [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
 
-## Join the community
+### 3. Authentication
 
-Join our community of developers creating universal apps.
+This app uses [Clerk](https://clerk.com) for user authentication.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Configure your Clerk frontend API and secret keys in `.env.local` files:
+  ```
+  EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=your_publishable_key
+  ```
+
+### 4. Supabase Setup
+
+We use [Supabase](https://supabase.com) for:
+
+- Realtime subscriptions (new messages)
+- Database storage
+- Optional user data persistence
+
+Make sure to add your Supabase project keys:
+
+```bash
+EXPO_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+```
+
+## 🗂️ Project Structure
+
+```
+/app              -> Routes and screens (Expo Router)
+/components       -> Shared UI components
+/utils            -> colors, test data, cache and types
+/hooks            -> Custom hooks (e.g. useSupabaseClient)
+/types            -> TypeScript type definitions
+```
+
+## 📚 Resources
+
+- [Expo Docs](https://docs.expo.dev)
+- [Clerk Docs](https://clerk.com/docs)
+- [Supabase Docs](https://supabase.com/docs)
+- [Expo Router](https://expo.github.io/router/docs)
+
+## 💬 Join the Community
+
+- [Expo GitHub](https://github.com/expo/expo)
+- [Expo Discord](https://chat.expo.dev)
+- [Supabase Discord](https://discord.supabase.com)
+- [Clerk Community](https://clerk.dev/community)
+
+---
+
+Built with ❤️ using Expo, Clerk, and Supabase.
